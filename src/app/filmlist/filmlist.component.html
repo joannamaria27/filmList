@@ -1,0 +1,22 @@
+<div   class="container text-center">
+<form  [formGroup]="newForm">
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" formControlName="fieldVal" placeholder="Guardians of the Galaxy" />
+    </div>
+    <button class="btn btn-primary" type="submit" (click)="onSearch()">
+        Search
+    </button>
+    
+</form>
+
+
+<hr/>
+<div class="container text-center">
+    <div class=" row row-cols-auto text-center"> 
+        <div  *ngFor="let oDet of omdbDetails" class="container text-center">
+            <app-card [o]="oDet" ></app-card>
+        </div>
+    </div>
+  </div>
+</div>

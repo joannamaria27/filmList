@@ -5,10 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule  } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { CardComponent } from './card/card.component';
+import { FilmlistComponent } from './filmlist/filmlist.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WishlistComponent,
+    CardComponent,
+    FilmlistComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +24,7 @@ import { ReactiveFormsModule  } from '@angular/forms';
     NgbModule,
     ReactiveFormsModule 
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
