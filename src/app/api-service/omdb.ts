@@ -1,7 +1,7 @@
 export interface OMDb {
     Message: string,
     Status: string,
-    Omdb: OmdbDetails[];
+    Search: OmdbDetails[];
 }
 
 export interface OmdbDetails {

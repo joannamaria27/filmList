@@ -1,24 +1,26 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { OmdbDetails } from '../api-service/omdb';
+import { WishlistComponent } from '../wishlist/wishlist.component';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css'],
   providers: [CookieService]
 })
 
 export class CardComponent implements OnInit {
-  @Input() o:any
+  @Input()
+  o!: OmdbDetails;
   wish:string[] =[];
-  
   constructor(private cookieService: CookieService) { }
-  ngOnInit() {
+  ngOnInit(): void {
+    this.wish.includes(this.o.imdbID)
     this.wish=JSON.parse(this.cookieService.get('id_film_wishlist'));
   }
   
-  wishlistClick(o: any){
+  wishlistClick(o: OmdbDetails) : void{
     if(this.wish.includes(o.imdbID))
     {
       const index: number = this.wish.indexOf(o.imdbID);

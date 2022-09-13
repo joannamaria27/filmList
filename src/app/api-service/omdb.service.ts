@@ -12,13 +12,11 @@ export class OmdbService {
   private _url: string = "https://www.omdbapi.com/?"
   constructor(private http: HttpClient) { }
 
-  getOmdbDetails(code: any): any {
-    console.log(this._url)
+  getOmdbDetails(code: string): Observable<OMDb> {
     return this.http.get<OMDb>(this._url + "s="+ code +"&apikey=879c7d9d");
   }
 
-  getOmdbDetailsId(code: any): any {
-    console.log(this._url)
+  getOmdbDetailsId(code: string): Observable<OmdbDetails> {
     return this.http.get<OmdbDetails>(this._url + "i="+ code +"&apikey=879c7d9d");
   }
 
