@@ -10,13 +10,20 @@ import { OmdbService } from '../api-service/omdb.service';
 
 export class WishlistComponent implements OnInit {
   public omdbWish: OmdbDetails[]=[];
-  public wish : string = "";
+  public wish : string[] = [];
   constructor(private cookieService: CookieService,private omdbS: OmdbService) {}
 
   ngOnInit(): void {
     this.wish=JSON.parse(this.cookieService.get('id_film_wishlist'));
     for(let w of this.wish)
     {
+      if(w == (undefined || null))
+      {
+        const index: number = this.wish.indexOf(w);
+        if (index !== -1) {
+          this.wish.splice(index, 1);
+      }  
+      }
       this.omdbS.getOmdbDetailsId(w).subscribe(
         (data : OmdbDetails) => {
           this.omdbWish.push(data);
