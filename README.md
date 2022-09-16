@@ -1,4 +1,13 @@
-# Task
+# Task - https://joannamaria27.github.io/task/
+
+I created simple application with Angular
+
+:star: www.omdbapi.com
+
+:star: Search field, List of results
+
+:star: Simple persistent wishlist using cookies (adding, displaying, deleting)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
 
