@@ -1,5 +1,4 @@
-# Task - https://joannamaria27.github.io/task/
-
+# 
 I created simple application with Angular
 
 :star: www.omdbapi.com
